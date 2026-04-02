@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:HigherOrLower.ViewModels"
+             x:Class="HigherOrLower.Views.StartPage"
+             x:DataType="vm:StartPageViewModel"
+             Title="Higher or Lower | Start">
+
+    <ContentPage.Content>
+
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+            <Label Text="Higher or Lower"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Entry Placeholder="Enter your name..."
+                   Text="{Binding PlayerName}" />
+
+            <Button Text="Start Game"
+                    Command="{Binding StartCommand}"
+                    HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

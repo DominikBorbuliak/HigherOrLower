@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:HigherOrLower.ViewModels"
+             x:Class="HigherOrLower.Views.GamePage"
+             x:DataType="vm:GamePageViewModel"
+             Title="Higher or Lower | Game">
+
+    <ContentPage.Content>
+
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+            <Label Text="{Binding PlayerName, StringFormat='Player: {0}'}"
+                   FontSize="18"
+                   HorizontalOptions="Center" />
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="30">
+                <Label Text="{Binding Score, StringFormat='Score: {0}'}" FontSize="18" />
+                <Label Text="{Binding Lives, StringFormat='Lives: {0}'}" FontSize="18" />
+            </HorizontalStackLayout>
+
+            <Label Text="{Binding CurrentNumber}"
+                   FontSize="72"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Label Text="{Binding Feedback}"
+                   FontSize="24"
+                   HorizontalOptions="Center" />
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+                <Button Text="⬆ Higher"
+                        Command="{Binding GuessCommand}"
+                        CommandParameter="{x:Boolean True}"
+                        WidthRequest="140" />
+                <Button Text="⬇ Lower"
+                        Command="{Binding GuessCommand}"
+                        CommandParameter="{x:Boolean False}"
+                        WidthRequest="140" />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
